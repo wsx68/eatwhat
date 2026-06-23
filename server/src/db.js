@@ -226,6 +226,20 @@ function getUserCheckins(userId, { page = 1, size = 20 } = {}) {
   };
 }
 
+// 删除打卡
+function deleteCheckin(id, userId) {
+  const idx = data.checkins.findIndex(c => c.id === id && c.user_id === userId);
+  if (idx === -1) return null;
+  const removed = data.checkins.splice(idx, 1)[0];
+  // 减少对应餐品的打卡计数
+  const food = data.foods.find(f => f.id === removed.food_id);
+  if (food && food.checkin_count > 0) {
+    food.checkin_count--;
+  }
+  save();
+  return removed;
+}
+
 // ===== 种子数据专用（直接操作） =====
 function getData() { return data; }
 function setData(newData) { data = newData; save(); }
@@ -252,6 +266,7 @@ module.exports = {
   getRecentCheckins,
   getCheckinById,
   getUserCheckins,
+  deleteCheckin,
   // 底层
   getData,
   setData,

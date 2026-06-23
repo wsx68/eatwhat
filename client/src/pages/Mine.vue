@@ -10,10 +10,20 @@
       <div class="card-head"><span class="card-title">打卡记录</span><span class="card-sub">共 {{ checkinStore.historyTotal }} 条</span></div>
       <div v-if="!checkinStore.history.length && !checkinStore.historyLoading" class="empty"><span>📝</span><p>还没有打卡记录</p></div>
       <div class="history-grid">
-        <div v-for="item in checkinStore.history" :key="item.id" class="h-item" @click="goDetail(item.food_id)">
-          <img :src="item.food_image || ph" class="h-img" alt="" />
-          <div class="h-body"><span class="h-food">{{ item.food_name }}</span><span class="h-rest">{{ item.restaurant_name }}</span><span v-if="item.comment" class="h-cmt">"{{ item.comment }}"</span></div>
-          <span class="h-time">{{ fmt(item.created_at) }}</span>
+        <div v-for="item in checkinStore.history" :key="item.id" class="h-row">
+          <div class="h-delete-btn" @click.stop="handleDelete(item)">删除</div>
+          <div
+            class="h-item"
+            :class="{ 'swiped': swipeOpenId === item.id }"
+            @click="onItemClick(item)"
+            @touchstart.passive="onTouchStart($event, item)"
+            @touchmove="onTouchMove($event, item)"
+            @touchend="onTouchEnd($event, item)"
+          >
+            <img :src="item.food_image || ph" class="h-img" alt="" />
+            <div class="h-body"><span class="h-food">{{ item.food_name }}</span><span class="h-rest">{{ item.restaurant_name }}</span><span v-if="item.comment" class="h-cmt">"{{ item.comment }}"</span></div>
+            <span class="h-time">{{ fmt(item.created_at) }}</span>
+          </div>
         </div>
       </div>
       <div v-if="checkinStore.historyLoading" class="status">加载中...</div>
@@ -23,7 +33,7 @@
 </template>
 
 <script setup>
-import { computed, onMounted } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useUserStore } from '../stores/user'
 import { useCheckinStore } from '../stores/checkin'
@@ -32,7 +42,56 @@ const ph = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='
 const initial = computed(() => userStore.profile?.nickname?.[0] || '我')
 const uniqueFoods = computed(() => new Set(checkinStore.history.map(h => h.food_id)).size)
 onMounted(() => { if (!userStore.isLogin) userStore.autoLogin(); checkinStore.fetchHistory(true) })
-function goDetail(id) { if (id) router.push(`/food/${id}`) }
+
+// ---- 左滑 & 长按 ----
+const swipeOpenId = ref(null)
+let touchStartX = 0, touchStartY = 0, touchCurrentX = 0, touchItem = null
+let longPressTimer = null
+let hasSwiped = false
+
+function onTouchStart(e, item) {
+  const t = e.touches[0]
+  touchStartX = t.clientX; touchStartY = t.clientY
+  touchCurrentX = t.clientX; touchItem = item; hasSwiped = false
+  // 长按 600ms
+  clearTimeout(longPressTimer)
+  longPressTimer = setTimeout(() => { if (!hasSwiped) showDeleteConfirm(item) }, 600)
+}
+function onTouchMove(e, item) {
+  const t = e.touches[0]
+  touchCurrentX = t.clientX
+  const dx = touchCurrentX - touchStartX, dy = t.clientY - touchStartY
+  if (Math.abs(dx) > 10 && Math.abs(dx) > Math.abs(dy)) {
+    hasSwiped = true; clearTimeout(longPressTimer)
+    if (dx < -30) swipeOpenId.value = item.id
+    else if (dx > 30) swipeOpenId.value = null
+  }
+}
+function onTouchEnd(e, item) {
+  clearTimeout(longPressTimer)
+  if (!hasSwiped && swipeOpenId.value === item.id) {
+    // 点击已打开的 item → 关闭
+    swipeOpenId.value = null
+  }
+}
+function onItemClick(item) {
+  if (swipeOpenId.value === item.id) {
+    swipeOpenId.value = null
+  } else if (!hasSwiped) {
+    if (item.food_id) router.push(`/food/${item.food_id}`)
+  }
+}
+function showDeleteConfirm(item) {
+  if (confirm(`确定删除「${item.food_name}」的打卡记录吗？`)) {
+    checkinStore.deleteCheckin(item.id)
+  }
+}
+function handleDelete(item) {
+  if (confirm(`确定删除「${item.food_name}」的打卡记录吗？`)) {
+    checkinStore.deleteCheckin(item.id)
+    swipeOpenId.value = null
+  }
+}
 function fmt(d) { if (!d) return ''; const dt = new Date(d); return `${dt.getMonth()+1}/${dt.getDate()} ${String(dt.getHours()).padStart(2,'0')}:${String(dt.getMinutes()).padStart(2,'0')}` }
 </script>
 
@@ -52,8 +111,21 @@ function fmt(d) { if (!d) return ''; const dt = new Date(d); return `${dt.getMon
 .empty { text-align: center; padding: 32px 0; color: var(--c-text-s); }
 .empty span { font-size: 40px; display: block; margin-bottom: 8px; }
 .history-grid { display: flex; flex-direction: column; }
-.h-item { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid #fafaf8; cursor: pointer; }
-.h-item:last-child { border: none; }
+/* ---- 左滑容器 ---- */
+.h-row { position: relative; overflow: hidden; border-bottom: 1px solid #fafaf8; }
+.h-row:last-child { border: none; }
+.h-delete-btn {
+  position: absolute; right: 0; top: 0; bottom: 0; width: 70px;
+  background: #E85D5D; color: #fff; display: flex; align-items: center;
+  justify-content: center; font-size: 14px; font-weight: 600;
+  cursor: pointer; z-index: 0; border-radius: 0 10px 10px 0;
+}
+.h-item {
+  position: relative; z-index: 1; display: flex; align-items: center; gap: 10px;
+  padding: 10px 0; background: #fff; cursor: pointer;
+  transition: transform 0.25s ease;
+}
+.h-item.swiped { transform: translateX(-70px); }
 .h-img { width: 42px; height: 42px; border-radius: 10px; object-fit: cover; background: var(--c-bg); flex-shrink: 0; }
 .h-body { flex: 1; display: flex; flex-direction: column; }
 .h-food { font-size: 14px; font-weight: 600; color: var(--c-text); }

@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { post, get } from '../utils/request'
+import { post, get, del } from '../utils/request'
 
 export const useCheckinStore = defineStore('checkin', {
   state: () => ({
@@ -51,6 +51,20 @@ export const useCheckinStore = defineStore('checkin', {
       } catch (err) { console.error(err) }
       finally { this.historyLoading = false }
     },
-    resetForm() { this.selectedFood = null; this.comment = '' }
+    resetForm() { this.selectedFood = null; this.comment = '' },
+    async deleteCheckin(id) {
+      try {
+        await del('/checkin/' + id)
+        // 从本地列表中移除
+        const idx = this.history.findIndex(h => h.id === id)
+        if (idx > -1) {
+          this.history.splice(idx, 1)
+          this.historyTotal = Math.max(0, this.historyTotal - 1)
+        }
+      } catch (err) {
+        alert(err.message || '删除失败')
+        throw err
+      }
+    }
   }
 })

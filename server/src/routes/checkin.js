@@ -99,4 +99,19 @@ router.get('/history', authMiddleware, (req, res) => {
   res.json({ code: 0, data: result, message: 'ok' });
 });
 
+// 删除打卡
+router.delete('/:id', authMiddleware, (req, res) => {
+  const id = parseInt(req.params.id);
+  if (!id) {
+    return res.json({ code: 400, data: null, message: '参数错误' });
+  }
+
+  const removed = db.deleteCheckin(id, req.userId);
+  if (!removed) {
+    return res.json({ code: 404, data: null, message: '打卡记录不存在或无权删除' });
+  }
+
+  res.json({ code: 0, data: null, message: '删除成功' });
+});
+
 module.exports = router;

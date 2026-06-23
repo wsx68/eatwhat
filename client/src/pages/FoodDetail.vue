@@ -28,7 +28,7 @@
           </div>
         </div>
 
-        <div class="desktop-only" style="margin-top:16px">
+        <div style="margin-top:16px">
           <button @click="quickCheckin" :disabled="checking" class="btn full">{{ checking ? '打卡中...' : '🍽️ 跟吃 +1' }}</button>
         </div>
       </div>

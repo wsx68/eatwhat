@@ -41,3 +41,7 @@ export function get(url, params = {}) {
 export function post(url, data = {}) {
   return request(url, { method: 'POST', data })
 }
+
+export function del(url, data = {}) {
+  return request(url, { method: 'DELETE', data })
+}

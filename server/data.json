@@ -1,0 +1,1003 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "openid": "dev_openid_001",
+      "nickname": "吃货小王",
+      "avatar_url": "",
+      "created_at": "2026-06-17T07:23:39.494Z"
+    },
+    {
+      "id": 2,
+      "openid": "dev_openid_002",
+      "nickname": "面食爱好者",
+      "avatar_url": "",
+      "created_at": "2026-06-17T07:23:39.563Z"
+    },
+    {
+      "id": 3,
+      "openid": "dev_openid_003",
+      "nickname": "干饭达人",
+      "avatar_url": "",
+      "created_at": "2026-06-17T07:23:39.563Z"
+    },
+    {
+      "id": 4,
+      "openid": "dev_openid_004",
+      "nickname": "奶茶控",
+      "avatar_url": "",
+      "created_at": "2026-06-17T07:23:39.665Z"
+    },
+    {
+      "id": 5,
+      "openid": "dev_openid_005",
+      "nickname": "麻辣星人",
+      "avatar_url": "",
+      "created_at": "2026-06-17T07:23:39.666Z"
+    },
+    {
+      "id": 6,
+      "openid": "dev_user",
+      "nickname": "面食爱好者52",
+      "avatar_url": "",
+      "created_at": "2026-06-17T10:22:22.193Z"
+    },
+    {
+      "id": 7,
+      "openid": "dev_openid_a7fa23b6",
+      "nickname": "奶茶控59",
+      "avatar_url": "",
+      "created_at": "2026-06-17T11:10:56.106Z"
+    },
+    {
+      "id": 8,
+      "openid": "dup_test",
+      "nickname": "麻辣星人47",
+      "avatar_url": "",
+      "created_at": "2026-06-17T12:44:51.605Z"
+    }
+  ],
+  "restaurants": [
+    {
+      "id": 1,
+      "name": "杨铭宇黄焖鸡",
+      "type": "commercial",
+      "location": "商业街A区",
+      "cover_url": "",
+      "created_at": "2026-06-17T07:23:39.714Z"
+    },
+    {
+      "id": 2,
+      "name": "兰州拉面",
+      "type": "commercial",
+      "location": "商业街A区",
+      "cover_url": "",
+      "created_at": "2026-06-17T07:23:39.770Z"
+    },
+    {
+      "id": 3,
+      "name": "正新鸡排",
+      "type": "commercial",
+      "location": "商业街B区",
+      "cover_url": "",
+      "created_at": "2026-06-17T07:23:39.770Z"
+    },
+    {
+      "id": 4,
+      "name": "沙县小吃",
+      "type": "commercial",
+      "location": "商业街B区",
+      "cover_url": "",
+      "created_at": "2026-06-17T07:23:39.771Z"
+    },
+    {
+      "id": 5,
+      "name": "蜜雪冰城",
+      "type": "commercial",
+      "location": "商业街C区",
+      "cover_url": "",
+      "created_at": "2026-06-17T07:23:39.819Z"
+    },
+    {
+      "id": 6,
+      "name": "一食堂-川味档口",
+      "type": "cafeteria",
+      "location": "一食堂二楼",
+      "cover_url": "",
+      "created_at": "2026-06-17T07:23:39.819Z"
+    },
+    {
+      "id": 7,
+      "name": "一食堂-面食档口",
+      "type": "cafeteria",
+      "location": "一食堂二楼",
+      "cover_url": "",
+      "created_at": "2026-06-17T07:23:39.886Z"
+    },
+    {
+      "id": 8,
+      "name": "二食堂-铁板烧",
+      "type": "cafeteria",
+      "location": "二食堂一楼",
+      "cover_url": "",
+      "created_at": "2026-06-17T07:23:39.928Z"
+    },
+    {
+      "id": 9,
+      "name": "二食堂-麻辣烫",
+      "type": "cafeteria",
+      "location": "二食堂一楼",
+      "cover_url": "",
+      "created_at": "2026-06-17T07:23:39.929Z"
+    },
+    {
+      "id": 10,
+      "name": "三食堂-煲仔饭",
+      "type": "cafeteria",
+      "location": "三食堂一楼",
+      "cover_url": "",
+      "created_at": "2026-06-17T07:23:39.930Z"
+    }
+  ],
+  "foods": [
+    {
+      "id": 1,
+      "restaurant_id": 1,
+      "name": "黄焖鸡米饭（小）",
+      "price": 15,
+      "category": "米饭",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 4,
+      "created_at": "2026-06-17T07:23:39.969Z"
+    },
+    {
+      "id": 2,
+      "restaurant_id": 1,
+      "name": "黄焖鸡米饭（大）",
+      "price": 20,
+      "category": "米饭",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 1,
+      "created_at": "2026-06-17T07:23:39.969Z"
+    },
+    {
+      "id": 3,
+      "restaurant_id": 1,
+      "name": "黄焖排骨饭",
+      "price": 22,
+      "category": "米饭",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 1,
+      "created_at": "2026-06-17T07:23:39.969Z"
+    },
+    {
+      "id": 4,
+      "restaurant_id": 1,
+      "name": "黄焖茄子和饭",
+      "price": 13,
+      "category": "米饭",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 3,
+      "created_at": "2026-06-17T07:23:40.024Z"
+    },
+    {
+      "id": 5,
+      "restaurant_id": 2,
+      "name": "牛肉拉面",
+      "price": 12,
+      "category": "面食",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 2,
+      "created_at": "2026-06-17T07:23:40.024Z"
+    },
+    {
+      "id": 6,
+      "restaurant_id": 2,
+      "name": "牛肉刀削面",
+      "price": 14,
+      "category": "面食",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 4,
+      "created_at": "2026-06-17T07:23:40.024Z"
+    },
+    {
+      "id": 7,
+      "restaurant_id": 2,
+      "name": "牛肉炒拉面",
+      "price": 16,
+      "category": "面食",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 2,
+      "created_at": "2026-06-17T07:23:40.038Z"
+    },
+    {
+      "id": 8,
+      "restaurant_id": 2,
+      "name": "兰州凉皮",
+      "price": 10,
+      "category": "小吃",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 1,
+      "created_at": "2026-06-17T07:23:40.038Z"
+    },
+    {
+      "id": 9,
+      "restaurant_id": 2,
+      "name": "肉夹馍",
+      "price": 8,
+      "category": "小吃",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 4,
+      "created_at": "2026-06-17T07:23:40.051Z"
+    },
+    {
+      "id": 10,
+      "restaurant_id": 3,
+      "name": "招牌大鸡排",
+      "price": 12,
+      "category": "小吃",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 1,
+      "created_at": "2026-06-17T07:23:40.052Z"
+    },
+    {
+      "id": 11,
+      "restaurant_id": 3,
+      "name": "香辣鸡排",
+      "price": 12,
+      "category": "小吃",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 1,
+      "created_at": "2026-06-17T07:23:40.052Z"
+    },
+    {
+      "id": 12,
+      "restaurant_id": 3,
+      "name": "鸡排汉堡",
+      "price": 15,
+      "category": "小吃",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 2,
+      "created_at": "2026-06-17T07:23:40.053Z"
+    },
+    {
+      "id": 13,
+      "restaurant_id": 3,
+      "name": "薯条",
+      "price": 8,
+      "category": "小吃",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 1,
+      "created_at": "2026-06-17T07:23:40.066Z"
+    },
+    {
+      "id": 14,
+      "restaurant_id": 4,
+      "name": "蒸饺",
+      "price": 8,
+      "category": "小吃",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 1,
+      "created_at": "2026-06-17T07:23:40.066Z"
+    },
+    {
+      "id": 15,
+      "restaurant_id": 4,
+      "name": "拌面",
+      "price": 8,
+      "category": "面食",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 2,
+      "created_at": "2026-06-17T07:23:40.066Z"
+    },
+    {
+      "id": 16,
+      "restaurant_id": 4,
+      "name": "扁肉馄饨",
+      "price": 10,
+      "category": "小吃",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 1,
+      "created_at": "2026-06-17T07:23:40.067Z"
+    },
+    {
+      "id": 17,
+      "restaurant_id": 4,
+      "name": "炒米粉",
+      "price": 12,
+      "category": "面食",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 1,
+      "created_at": "2026-06-17T07:23:40.082Z"
+    },
+    {
+      "id": 18,
+      "restaurant_id": 5,
+      "name": "柠檬水",
+      "price": 4,
+      "category": "饮品",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 1,
+      "created_at": "2026-06-17T07:23:40.099Z"
+    },
+    {
+      "id": 19,
+      "restaurant_id": 5,
+      "name": "珍珠奶茶",
+      "price": 8,
+      "category": "饮品",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 3,
+      "created_at": "2026-06-17T07:23:40.099Z"
+    },
+    {
+      "id": 20,
+      "restaurant_id": 5,
+      "name": "草莓摇摇奶昔",
+      "price": 8,
+      "category": "饮品",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 1,
+      "created_at": "2026-06-17T07:23:40.099Z"
+    },
+    {
+      "id": 21,
+      "restaurant_id": 5,
+      "name": "冰淇淋",
+      "price": 3,
+      "category": "饮品",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 1,
+      "created_at": "2026-06-17T07:23:40.100Z"
+    },
+    {
+      "id": 22,
+      "restaurant_id": 6,
+      "name": "麻辣香锅",
+      "price": 18,
+      "category": "米饭",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 1,
+      "created_at": "2026-06-17T07:23:40.113Z"
+    },
+    {
+      "id": 23,
+      "restaurant_id": 6,
+      "name": "水煮肉片",
+      "price": 16,
+      "category": "米饭",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 2,
+      "created_at": "2026-06-17T07:23:40.114Z"
+    },
+    {
+      "id": 24,
+      "restaurant_id": 6,
+      "name": "宫保鸡丁盖饭",
+      "price": 14,
+      "category": "米饭",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 1,
+      "created_at": "2026-06-17T07:23:40.131Z"
+    },
+    {
+      "id": 25,
+      "restaurant_id": 6,
+      "name": "麻婆豆腐盖饭",
+      "price": 12,
+      "category": "米饭",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 1,
+      "created_at": "2026-06-17T07:23:40.132Z"
+    },
+    {
+      "id": 26,
+      "restaurant_id": 6,
+      "name": "回锅肉盖饭",
+      "price": 15,
+      "category": "米饭",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 1,
+      "created_at": "2026-06-17T07:23:40.149Z"
+    },
+    {
+      "id": 27,
+      "restaurant_id": 7,
+      "name": "炸酱面",
+      "price": 12,
+      "category": "面食",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 1,
+      "created_at": "2026-06-17T07:23:40.150Z"
+    },
+    {
+      "id": 28,
+      "restaurant_id": 7,
+      "name": "西红柿鸡蛋面",
+      "price": 10,
+      "category": "面食",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 1,
+      "created_at": "2026-06-17T07:23:40.167Z"
+    },
+    {
+      "id": 29,
+      "restaurant_id": 7,
+      "name": "油泼面",
+      "price": 13,
+      "category": "面食",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 1,
+      "created_at": "2026-06-17T07:23:40.167Z"
+    },
+    {
+      "id": 30,
+      "restaurant_id": 7,
+      "name": "酸汤水饺",
+      "price": 12,
+      "category": "面食",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 1,
+      "created_at": "2026-06-17T07:23:40.181Z"
+    },
+    {
+      "id": 31,
+      "restaurant_id": 8,
+      "name": "铁板牛肉饭",
+      "price": 20,
+      "category": "米饭",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 0,
+      "created_at": "2026-06-17T07:23:40.181Z"
+    },
+    {
+      "id": 32,
+      "restaurant_id": 8,
+      "name": "铁板鸡肉饭",
+      "price": 16,
+      "category": "米饭",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 0,
+      "created_at": "2026-06-17T07:23:40.182Z"
+    },
+    {
+      "id": 33,
+      "restaurant_id": 8,
+      "name": "铁板鱿鱼饭",
+      "price": 22,
+      "category": "米饭",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 0,
+      "created_at": "2026-06-17T07:23:40.182Z"
+    },
+    {
+      "id": 34,
+      "restaurant_id": 8,
+      "name": "铁板豆腐饭",
+      "price": 12,
+      "category": "米饭",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 0,
+      "created_at": "2026-06-17T07:23:40.214Z"
+    },
+    {
+      "id": 35,
+      "restaurant_id": 9,
+      "name": "麻辣烫（自选）",
+      "price": 15,
+      "category": "小吃",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 0,
+      "created_at": "2026-06-17T07:23:40.215Z"
+    },
+    {
+      "id": 36,
+      "restaurant_id": 9,
+      "name": "麻辣拌",
+      "price": 15,
+      "category": "小吃",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 0,
+      "created_at": "2026-06-17T07:23:40.215Z"
+    },
+    {
+      "id": 37,
+      "restaurant_id": 9,
+      "name": "冒菜",
+      "price": 18,
+      "category": "小吃",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 0,
+      "created_at": "2026-06-17T07:23:40.216Z"
+    },
+    {
+      "id": 38,
+      "restaurant_id": 10,
+      "name": "腊味煲仔饭",
+      "price": 18,
+      "category": "米饭",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 0,
+      "created_at": "2026-06-17T07:23:40.230Z"
+    },
+    {
+      "id": 39,
+      "restaurant_id": 10,
+      "name": "滑鸡煲仔饭",
+      "price": 16,
+      "category": "米饭",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 0,
+      "created_at": "2026-06-17T07:23:40.231Z"
+    },
+    {
+      "id": 40,
+      "restaurant_id": 10,
+      "name": "排骨煲仔饭",
+      "price": 20,
+      "category": "米饭",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 0,
+      "created_at": "2026-06-17T07:23:40.232Z"
+    },
+    {
+      "id": 41,
+      "restaurant_id": 10,
+      "name": "牛肉煲仔饭",
+      "price": 22,
+      "category": "米饭",
+      "image_url": "",
+      "rating": 0,
+      "checkin_count": 2,
+      "created_at": "2026-06-17T07:23:40.245Z"
+    }
+  ],
+  "checkins": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "food_id": 1,
+      "restaurant_id": 1,
+      "comment": "排队有点久",
+      "created_at": "2026-06-17T07:08:17.353Z"
+    },
+    {
+      "id": 2,
+      "user_id": 2,
+      "food_id": 2,
+      "restaurant_id": 1,
+      "comment": "排队有点久",
+      "created_at": "2026-06-17T07:17:19.514Z"
+    },
+    {
+      "id": 3,
+      "user_id": 3,
+      "food_id": 3,
+      "restaurant_id": 1,
+      "comment": "",
+      "created_at": "2026-06-17T06:46:34.509Z"
+    },
+    {
+      "id": 4,
+      "user_id": 4,
+      "food_id": 4,
+      "restaurant_id": 1,
+      "comment": "好吃！",
+      "created_at": "2026-06-17T06:55:09.201Z"
+    },
+    {
+      "id": 5,
+      "user_id": 5,
+      "food_id": 5,
+      "restaurant_id": 2,
+      "comment": "好吃！",
+      "created_at": "2026-06-17T07:03:16.839Z"
+    },
+    {
+      "id": 6,
+      "user_id": 1,
+      "food_id": 6,
+      "restaurant_id": 2,
+      "comment": "今天又来吃了",
+      "created_at": "2026-06-17T06:31:23.681Z"
+    },
+    {
+      "id": 7,
+      "user_id": 2,
+      "food_id": 7,
+      "restaurant_id": 2,
+      "comment": "好吃！",
+      "created_at": "2026-06-17T06:46:07.144Z"
+    },
+    {
+      "id": 8,
+      "user_id": 3,
+      "food_id": 8,
+      "restaurant_id": 2,
+      "comment": "好吃！",
+      "created_at": "2026-06-17T06:34:47.375Z"
+    },
+    {
+      "id": 9,
+      "user_id": 4,
+      "food_id": 9,
+      "restaurant_id": 2,
+      "comment": "好吃！",
+      "created_at": "2026-06-17T06:31:33.085Z"
+    },
+    {
+      "id": 10,
+      "user_id": 5,
+      "food_id": 10,
+      "restaurant_id": 3,
+      "comment": "今天又来吃了",
+      "created_at": "2026-06-17T06:18:42.933Z"
+    },
+    {
+      "id": 11,
+      "user_id": 1,
+      "food_id": 11,
+      "restaurant_id": 3,
+      "comment": "",
+      "created_at": "2026-06-17T06:26:15.157Z"
+    },
+    {
+      "id": 12,
+      "user_id": 2,
+      "food_id": 12,
+      "restaurant_id": 3,
+      "comment": "今天又来吃了",
+      "created_at": "2026-06-17T06:12:06.878Z"
+    },
+    {
+      "id": 13,
+      "user_id": 3,
+      "food_id": 13,
+      "restaurant_id": 3,
+      "comment": "分量很足",
+      "created_at": "2026-06-17T06:09:04.593Z"
+    },
+    {
+      "id": 14,
+      "user_id": 4,
+      "food_id": 14,
+      "restaurant_id": 4,
+      "comment": "推荐",
+      "created_at": "2026-06-17T06:12:55.875Z"
+    },
+    {
+      "id": 15,
+      "user_id": 5,
+      "food_id": 15,
+      "restaurant_id": 4,
+      "comment": "今天又来吃了",
+      "created_at": "2026-06-17T06:13:19.291Z"
+    },
+    {
+      "id": 16,
+      "user_id": 1,
+      "food_id": 16,
+      "restaurant_id": 4,
+      "comment": "排队有点久",
+      "created_at": "2026-06-17T06:02:52.326Z"
+    },
+    {
+      "id": 17,
+      "user_id": 2,
+      "food_id": 17,
+      "restaurant_id": 4,
+      "comment": "今天又来吃了",
+      "created_at": "2026-06-17T05:59:58.290Z"
+    },
+    {
+      "id": 18,
+      "user_id": 3,
+      "food_id": 18,
+      "restaurant_id": 5,
+      "comment": "好吃！",
+      "created_at": "2026-06-17T05:49:30.979Z"
+    },
+    {
+      "id": 19,
+      "user_id": 4,
+      "food_id": 19,
+      "restaurant_id": 5,
+      "comment": "排队有点久",
+      "created_at": "2026-06-17T05:48:32.978Z"
+    },
+    {
+      "id": 20,
+      "user_id": 5,
+      "food_id": 20,
+      "restaurant_id": 5,
+      "comment": "推荐",
+      "created_at": "2026-06-17T05:19:41.478Z"
+    },
+    {
+      "id": 21,
+      "user_id": 1,
+      "food_id": 21,
+      "restaurant_id": 5,
+      "comment": "推荐",
+      "created_at": "2026-06-17T05:40:07.009Z"
+    },
+    {
+      "id": 22,
+      "user_id": 2,
+      "food_id": 22,
+      "restaurant_id": 6,
+      "comment": "推荐",
+      "created_at": "2026-06-17T05:32:33.722Z"
+    },
+    {
+      "id": 23,
+      "user_id": 3,
+      "food_id": 23,
+      "restaurant_id": 6,
+      "comment": "推荐",
+      "created_at": "2026-06-17T05:33:12.109Z"
+    },
+    {
+      "id": 24,
+      "user_id": 4,
+      "food_id": 24,
+      "restaurant_id": 6,
+      "comment": "",
+      "created_at": "2026-06-17T05:07:37.119Z"
+    },
+    {
+      "id": 25,
+      "user_id": 5,
+      "food_id": 25,
+      "restaurant_id": 6,
+      "comment": "好吃！",
+      "created_at": "2026-06-17T05:13:49.620Z"
+    },
+    {
+      "id": 26,
+      "user_id": 1,
+      "food_id": 26,
+      "restaurant_id": 6,
+      "comment": "",
+      "created_at": "2026-06-17T04:50:49.837Z"
+    },
+    {
+      "id": 27,
+      "user_id": 2,
+      "food_id": 27,
+      "restaurant_id": 7,
+      "comment": "",
+      "created_at": "2026-06-17T04:58:37.637Z"
+    },
+    {
+      "id": 28,
+      "user_id": 3,
+      "food_id": 28,
+      "restaurant_id": 7,
+      "comment": "推荐",
+      "created_at": "2026-06-17T04:46:13.793Z"
+    },
+    {
+      "id": 29,
+      "user_id": 4,
+      "food_id": 29,
+      "restaurant_id": 7,
+      "comment": "今天又来吃了",
+      "created_at": "2026-06-17T04:37:42.556Z"
+    },
+    {
+      "id": 30,
+      "user_id": 5,
+      "food_id": 30,
+      "restaurant_id": 7,
+      "comment": "推荐",
+      "created_at": "2026-06-17T04:51:27.171Z"
+    },
+    {
+      "id": 31,
+      "user_id": 6,
+      "food_id": 4,
+      "restaurant_id": 1,
+      "comment": "和",
+      "created_at": "2026-06-17T11:03:55.722Z"
+    },
+    {
+      "id": 32,
+      "user_id": 7,
+      "food_id": 19,
+      "restaurant_id": 5,
+      "comment": "test",
+      "created_at": "2026-06-17T11:10:56.266Z"
+    },
+    {
+      "id": 33,
+      "user_id": 6,
+      "food_id": 9,
+      "restaurant_id": 2,
+      "comment": "",
+      "created_at": "2026-06-17T11:11:57.302Z"
+    },
+    {
+      "id": 34,
+      "user_id": 6,
+      "food_id": 6,
+      "restaurant_id": 2,
+      "comment": "",
+      "created_at": "2026-06-17T12:37:11.618Z"
+    },
+    {
+      "id": 35,
+      "user_id": 6,
+      "food_id": 4,
+      "restaurant_id": 1,
+      "comment": "",
+      "created_at": "2026-06-17T12:37:16.538Z"
+    },
+    {
+      "id": 36,
+      "user_id": 6,
+      "food_id": 23,
+      "restaurant_id": 6,
+      "comment": "",
+      "created_at": "2026-06-17T12:37:51.175Z"
+    },
+    {
+      "id": 37,
+      "user_id": 6,
+      "food_id": 6,
+      "restaurant_id": 2,
+      "comment": "",
+      "created_at": "2026-06-17T12:38:04.593Z"
+    },
+    {
+      "id": 38,
+      "user_id": 6,
+      "food_id": 15,
+      "restaurant_id": 4,
+      "comment": "",
+      "created_at": "2026-06-17T12:38:21.281Z"
+    },
+    {
+      "id": 39,
+      "user_id": 6,
+      "food_id": 9,
+      "restaurant_id": 2,
+      "comment": "",
+      "created_at": "2026-06-17T12:38:33.739Z"
+    },
+    {
+      "id": 40,
+      "user_id": 8,
+      "food_id": 1,
+      "restaurant_id": 1,
+      "comment": "",
+      "created_at": "2026-06-17T12:44:51.845Z"
+    },
+    {
+      "id": 41,
+      "user_id": 6,
+      "food_id": 1,
+      "restaurant_id": 1,
+      "comment": "",
+      "created_at": "2026-06-17T12:54:55.709Z"
+    },
+    {
+      "id": 42,
+      "user_id": 6,
+      "food_id": 19,
+      "restaurant_id": 5,
+      "comment": "",
+      "created_at": "2026-06-17T12:55:11.942Z"
+    },
+    {
+      "id": 43,
+      "user_id": 6,
+      "food_id": 41,
+      "restaurant_id": 10,
+      "comment": "",
+      "created_at": "2026-06-17T12:57:31.956Z"
+    },
+    {
+      "id": 44,
+      "user_id": 6,
+      "food_id": 41,
+      "restaurant_id": 10,
+      "comment": "",
+      "created_at": "2026-06-21T13:13:55.458Z"
+    },
+    {
+      "id": 45,
+      "user_id": 6,
+      "food_id": 9,
+      "restaurant_id": 2,
+      "comment": "",
+      "created_at": "2026-06-23T09:27:28.495Z"
+    },
+    {
+      "id": 46,
+      "user_id": 6,
+      "food_id": 6,
+      "restaurant_id": 2,
+      "comment": "",
+      "created_at": "2026-06-23T10:59:29.468Z"
+    },
+    {
+      "id": 47,
+      "user_id": 6,
+      "food_id": 7,
+      "restaurant_id": 2,
+      "comment": "",
+      "created_at": "2026-06-23T11:00:58.797Z"
+    },
+    {
+      "id": 48,
+      "user_id": 6,
+      "food_id": 1,
+      "restaurant_id": 1,
+      "comment": "",
+      "created_at": "2026-06-23T11:11:48.672Z"
+    },
+    {
+      "id": 49,
+      "user_id": 6,
+      "food_id": 12,
+      "restaurant_id": 3,
+      "comment": "",
+      "created_at": "2026-06-23T11:17:39.758Z"
+    },
+    {
+      "id": 50,
+      "user_id": 6,
+      "food_id": 5,
+      "restaurant_id": 2,
+      "comment": "",
+      "created_at": "2026-06-23T12:34:35.839Z"
+    }
+  ],
+  "_counters": {
+    "users": 8,
+    "restaurants": 10,
+    "foods": 41,
+    "checkins": 50
+  }
+}

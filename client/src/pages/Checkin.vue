@@ -27,7 +27,10 @@
 
       <!-- 浏览 -->
       <div v-if="!q" class="browse">
-        <div class="loc-tabs"><span v-for="l in locs" :key="l.k" class="lt" :class="{ on: loc === l.k }" @click="loc = l.k">{{ l.n }}</span></div>
+        <div class="loc-tabs"><span v-for="l in locs" :key="l.k" class="lt" :class="{ on: loc === l.k }" @click="onLocClick(l.k)">{{ l.n }}</span></div>
+        <div v-if="floors.length" class="floor-bar">
+          <span v-for="f in floors" :key="f" class="fl" :class="{ on: selectedFloor === f }" @click="selectedFloor = selectedFloor === f ? '' : f">{{ f }}</span>
+        </div>
         <div class="rest-grid">
           <div v-for="r in filteredRests" :key="r.id" class="rest-card" :class="{ open: openId === r.id }">
             <div class="rc-head" @click="toggle(r.id)">
@@ -55,9 +58,18 @@ import { useCheckinStore } from '../stores/checkin'
 import { get } from '../utils/request'
 const router = useRouter(); const checkinStore = useCheckinStore()
 const q = ref(''); const searchResults = ref([]); const searching = ref(false); const showSuccess = ref(false)
-const loc = ref('全部'); const openId = ref(null); const rests = ref([]); const foodMap = ref({})
-const locs = [{ k: '全部', n: '全部' },{ k: 'commercial', n: '🏪 商业街' },{ k: '一食堂', n: '一食堂' },{ k: '二食堂', n: '二食堂' },{ k: '三食堂', n: '三食堂' }]
-const filteredRests = computed(() => loc.value === '全部' ? rests.value : rests.value.filter(r => loc.value === 'commercial' ? r.type === 'commercial' : r.location?.includes(loc.value)))
+const loc = ref(''); const openId = ref(null); const rests = ref([]); const foodMap = ref({})
+const selectedFloor = ref('')
+const locs = [{ k: '一食堂', n: '一餐' },{ k: '二食堂', n: '二餐' },{ k: '三食堂', n: '民餐' },{ k: 'commercial', n: '商业街' }]
+const floorMap = { '一食堂': ['一楼','二楼'], '二食堂': ['一楼','二楼','三楼'], 'commercial': ['F1','F2'] }
+const floors = computed(() => floorMap[loc.value] || [])
+const filteredRests = computed(() => {
+  let list = rests.value
+  if (loc.value) list = list.filter(r => loc.value === 'commercial' ? r.type === 'commercial' : r.location?.includes(loc.value))
+  if (selectedFloor.value) list = list.filter(r => r.location?.includes(selectedFloor.value))
+  return list
+})
+function onLocClick(k) { loc.value = loc.value === k ? '' : k; selectedFloor.value = '' }
 onMounted(async () => { try { const d = await get('/restaurant/list'); rests.value = [...(d.commercial||[]),...(d.cafeteria||[])] } catch (e) {} })
 const clr = (n) => { const cs = ['#E8A87C','#95B8A8','#A8C5D6','#C4A882','#B8C9B0']; return cs[(n||'').split('').reduce((a,c)=>a+c.charCodeAt(0),0)%cs.length] }
 async function toggle(id) { openId.value = openId.value === id ? null : id; if (!foodMap.value[id]) { try { const d = await get('/food/list',{restaurant_id:id,size:50}); foodMap.value[id] = d.list||[] } catch (e) { foodMap.value[id]=[] } } }
@@ -102,6 +114,9 @@ textarea:focus { border-color: var(--c-primary); }
 .loc-tabs { padding: 10px 16px; white-space: nowrap; overflow-x: auto; }
 .lt { display: inline-block; padding: 7px 16px; margin: 0 2px; background: #fff; border-radius: 16px; font-size: 12px; color: var(--c-text-s); cursor: pointer; }
 .lt.on { background: var(--c-primary-l); color: var(--c-primary); font-weight: 600; }
+.floor-bar { margin: 4px 16px; display: flex; gap: 8px; }
+.fl { padding: 5px 14px; background: rgba(255,255,255,0.7); border: 1px solid var(--c-border); border-radius: 14px; font-size: 12px; color: var(--c-text-s); cursor: pointer; transition: all 0.18s; }
+.fl.on { background: var(--c-accent-l); color: var(--c-accent); border-color: var(--c-accent); font-weight: 600; }
 .rest-grid { display: flex; flex-direction: column; }
 .rest-card { background: #fff; margin: 8px 16px; border-radius: 14px; overflow: hidden; }
 .rc-head { display: flex; align-items: center; gap: 10px; padding: 14px; cursor: pointer; }

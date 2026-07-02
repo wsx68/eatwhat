@@ -29,20 +29,20 @@
         </div>
 
         <div style="margin-top:16px">
-          <button @click="quickCheckin" :disabled="checking" class="btn full">{{ checking ? '打卡中...' : '🍽️ 跟吃 +1' }}</button>
+          <button @click="quickCheckin" :disabled="checking" class="btn full">{{ checking ? '打卡中...' : (fromCatalog ? '🍽️ 打卡' : '🍽️ 跟吃 +1') }}</button>
         </div>
       </div>
     </div>
 
     <div class="bottom mobile-only">
-      <button @click="quickCheckin" :disabled="checking" class="btn full">{{ checking ? '打卡中...' : '🍽️ 跟吃 +1' }}</button>
+      <button @click="quickCheckin" :disabled="checking" class="btn full">{{ checking ? '打卡中...' : (fromCatalog ? '🍽️ 打卡' : '🍽️ 跟吃 +1') }}</button>
     </div>
   </div>
   <div v-else class="loading">加载中...</div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useFoodStore } from '../stores/food'
 import { post } from '../utils/request'
@@ -51,6 +51,7 @@ const route = useRoute(); const router = useRouter()
 const foodStore = useFoodStore()
 const food = ref(null)
 const checking = ref(false)
+const fromCatalog = computed(() => route.query.from === 'catalog')
 
 onMounted(async () => { try { food.value = await foodStore.fetchDetail(route.params.id) } catch (e) {} })
 
@@ -60,7 +61,7 @@ async function quickCheckin() {
   try {
     await post('/checkin', { food_id: food.value.id, restaurant_id: food.value.restaurant_id, comment: '' })
     food.value = await foodStore.fetchDetail(route.params.id)
-    alert('跟吃成功！🎉')
+    alert(fromCatalog.value ? '打卡成功！🎉' : '跟吃成功！🎉')
   } catch (e) {
     alert(e.message || '打卡失败')
     // 刷新以更新checkin_count

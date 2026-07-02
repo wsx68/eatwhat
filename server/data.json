@@ -170,7 +170,7 @@
       "category": "米饭",
       "image_url": "",
       "rating": 0,
-      "checkin_count": 1,
+      "checkin_count": 2,
       "created_at": "2026-06-17T07:23:39.969Z"
     },
     {
@@ -856,12 +856,20 @@
       "restaurant_id": 3,
       "comment": "",
       "created_at": "2026-06-23T13:15:57.979Z"
+    },
+    {
+      "id": 54,
+      "user_id": 6,
+      "food_id": 3,
+      "restaurant_id": 1,
+      "comment": "",
+      "created_at": "2026-06-30T13:24:48.194Z"
     }
   ],
   "_counters": {
     "users": 8,
     "restaurants": 10,
     "foods": 41,
-    "checkins": 53
+    "checkins": 54
   }
 }

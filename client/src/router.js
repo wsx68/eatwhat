@@ -9,7 +9,7 @@ const routes = [
   { path: '/', component: Home, meta: { title: '首页' } },
   { path: '/catalog', component: Catalog, meta: { title: '美食广场' } },
   { path: '/food/:id', component: FoodDetail, meta: { title: '餐品详情' } },
-  { path: '/checkin', component: Checkin, meta: { title: '打卡' } },
+  { path: '/checkin', component: Checkin, meta: { title: '转盘' } },
   { path: '/mine', component: Mine, meta: { title: '我的' } }
 ]
 

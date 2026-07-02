@@ -9,7 +9,7 @@
       <nav class="tb-nav">
         <router-link to="/" class="tb-link" active-class="tb-on" exact>首页</router-link>
         <router-link to="/catalog" class="tb-link" active-class="tb-on">美食广场</router-link>
-        <router-link to="/checkin" class="tb-link" active-class="tb-on">打卡</router-link>
+        <router-link to="/checkin" class="tb-link" active-class="tb-on">转盘</router-link>
         <router-link to="/mine" class="tb-link" active-class="tb-on">我的</router-link>
       </nav>
     </header>
@@ -32,7 +32,14 @@
         <span class="t-icon">🍔</span><span class="t-label">美食</span>
       </router-link>
       <router-link to="/checkin" class="tab" active-class="on">
-        <span class="t-icon">✏️</span><span class="t-label">打卡</span>
+        <span class="t-icon">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="13" cy="13" r="11" fill="#F0E0D0" stroke="#C8B090" stroke-width="1.5"/>
+            <path d="M13 3C10 5 7 7 5 10S4 15 6 18S11 22 13 22S18 20 20 17S22 10 20 7S16 3 13 3Z" fill="#E8C8B0" opacity="0.6"/>
+            <circle cx="13" cy="13" r="3" fill="#C8A890"/>
+          </svg>
+        </span>
+        <span class="t-label">转盘</span>
       </router-link>
       <router-link to="/mine" class="tab" active-class="on">
         <span class="t-icon">🙂</span><span class="t-label">我的</span>

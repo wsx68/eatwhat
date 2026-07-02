@@ -35,7 +35,7 @@ import FoodCard from '../components/FoodCard.vue'
 const router = useRouter(); const foodStore = useFoodStore()
 const q = ref(''); const lr = ref(null); const curLoc = ref(''); const curCat = ref('全部')
 const selectedFloor = ref('')
-const locations = [{ v: '一食堂', label: '一餐' },{ v: '二食堂', label: '二餐' },{ v: '三食堂', label: '民餐' },{ v: 'commercial', label: '商业街' }]
+const locations = [{ v: '一食堂', label: '一餐' },{ v: '二食堂', label: '二餐' },{ v: '三食堂', label: '风餐' },{ v: 'commercial', label: '商业街' }]
 const floorMap = { '一食堂': ['一楼','二楼'], '二食堂': ['一楼','二楼','三楼'], 'commercial': ['F1','F2'] }
 const floors = computed(() => floorMap[curLoc.value] || [])
 const categories = ['全部','米饭','面食','小吃','饮品']
@@ -66,7 +66,7 @@ function onFloorClick(f) { selectedFloor.value = selectedFloor.value === f ? '' 
 function switchCat(c) { curCat.value = c; loadData(true) }
 function doSearch() { curLoc.value = ''; selectedFloor.value = ''; curCat.value = '全部'; if (!q.value.trim()) { loadData(true); return }; foodStore.search(q.value) }
 function clearSearch() { q.value = ''; loadData(true) }
-function goDetail(f) { router.push(`/food/${f.id}`) }
+function goDetail(f) { router.push(`/food/${f.id}?from=catalog`) }
 function onScroll(e) { if (q.value) return; const el = e.target; if (el.scrollHeight - el.scrollTop - el.clientHeight < 200) loadData(false) }
 </script>
 
